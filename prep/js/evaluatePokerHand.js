@@ -1,7 +1,7 @@
 /**
  * @typedef {Object} Card
- * @property {string} suit - Suit of the card - Either "club", "spade", "diamond" or "heart"
- * @property {number} rank - Number rank of the card - So 1 for Ace, 2 for Two, 3 for Three, and so on, until 10 for Ten, then 11 for Jack, 12 for Queen and 13 for King
+ * @property {string} suits - Suit of the card - Either "club", "spade", "diamond" or "heart"
+ * @property {number} ranks - Number rank of the card - So 1 for Ace, 2 for Two, 3 for Three, and so on, until 10 for Ten, then 11 for Jack, 12 for Queen and 13 for King
  */
 
 /**

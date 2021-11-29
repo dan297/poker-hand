@@ -67,7 +67,7 @@ function evaluatePokerHand(hand) {
     // }
   }
 
-  return "c";
+  return "highcard";
 }
 
 // TODO: Put your evaluation code here.

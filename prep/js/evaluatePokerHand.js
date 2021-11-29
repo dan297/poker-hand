@@ -24,8 +24,6 @@ function evaluatePokerHand(hand) {
   // Here is an example of how to access the card data. You may wish to use this for debugging purposes.
   // You can delete this for loop or modify it for your own purposes
 
-  hand = hand.split(" ");
-
   if (hand.length != 5) {
     console.log("Incorrect number of cards.");
   } else {
@@ -34,50 +32,52 @@ function evaluatePokerHand(hand) {
     for (i = 0; i < hand.length; i++) {
       var card = hand[i];
 
-      console.log(`Card ${index + 1}: ${card.suit} x ${card.rank}`);
+      console.log(`Card ${i + 1}: ${card.suit} x ${card.rank}`);
     }
 
     if (
-      ranks.includes("A") &&
-      ranks.includes("K") &&
-      ranks.includes("Q") &&
-      ranks.includes("J") &&
+      ranks.includes("1") &&
       ranks.includes("10") &&
+      ranks.includes("11") &&
+      ranks.includes("13") &&
+      ranks.includes("12") &&
       containsFlush(suits)
     ) {
       console.log("Royal Flush");
-    } else if (containsFlush(suits) && containsStraight(ranks)) {
-      console.log("Straight Flush");
-    } else if (containsFourOfAKind(ranks)) {
-      console.log("Four of a Kind");
-    } else if (containsFullHouse(ranks)) {
-      console.log("Full House");
-    } else if (containsFlush(suits)) {
-      console.log("Flush");
-    } else if (containsStraight(ranks)) {
-      console.log("Straight");
-    } else if (containsThreeOfAKind(ranks)) {
-      console.log("Three of a Kind");
-    } else if (containsTwoPair(ranks)) {
-      console.log("Two Pair");
-    } else if (containsPair(ranks)) {
-      console.log("Pair");
-    } else {
-      console.log("High Card");
+      return "royalflush";
     }
+    // } else if (containsFlush(suits) && containsStraight(ranks)) {
+    //   console.log("Straight Flush");
+    // } else if (containsFourOfAKind(ranks)) {
+    //   console.log("Four of a Kind");
+    // } else if (containsFullHouse(ranks)) {
+    //   console.log("Full House");
+    // } else if (containsFlush(suits)) {
+    //   console.log("Flush");
+    // } else if (containsStraight(ranks)) {
+    //   console.log("Straight");
+    // } else if (containsThreeOfAKind(ranks)) {
+    //   console.log("Three of a Kind");
+    // } else if (containsTwoPair(ranks)) {
+    //   console.log("Two Pair");
+    // } else if (containsPair(ranks)) {
+    //   console.log("Pair");
+    // } else {
+    //   console.log("High Card");
+    // }
   }
+
+  return "highcard";
 }
 
 // TODO: Put your evaluation code here.
 
-return "highcard";
-
-function containsFlush(x) {
-  if (x[0] == x[1] && x[1] == x[2] && x[2] == x[3] && x[3] == x[4]) {
-    return flush;
-  } else {
-    return false;
-  }
-}
+// function containsFlush(x) {
+//   if (x[0] == x[1] && x[1] == x[2] && x[2] == x[3] && x[3] == x[4]) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 module.exports = evaluatePokerHand;

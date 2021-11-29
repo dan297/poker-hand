@@ -67,17 +67,22 @@ function evaluatePokerHand(hand) {
     // }
   }
 
-  return "highcard";
+  return "c";
 }
 
 // TODO: Put your evaluation code here.
 
-// function containsFlush(x) {
-//   if (x[0] == x[1] && x[1] == x[2] && x[2] == x[3] && x[3] == x[4]) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
+function containsFlush(hand) {
+  if (
+    hand[0] == hand[1] &&
+    hand[1] == hand[2] &&
+    hand[2] == hand[3] &&
+    hand[3] == hand[4]
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 module.exports = evaluatePokerHand;
